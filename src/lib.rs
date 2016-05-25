@@ -1,4 +1,4 @@
-#![feature(core)]
+#![allow(non_camel_case_types)]
 
 extern crate libc;
 extern crate core;
@@ -14,7 +14,7 @@ type fmNodePtr = *mut c_void;
 type fmAggrefPtr = *mut c_void;
 
 /// A trait that is implemented for all Postgres-compatible data types.
-trait PgType {}
+pub trait PgType {}
 
 #[allow(dead_code)]
 extern {
@@ -460,6 +460,7 @@ pub struct FunctionCallInfoData {
 }
 
 pub struct FunctionCallInfo<'a> {
+    #[allow(dead_code)]
     ptr: *mut FunctionCallInfoData,
     marker: PhantomData<&'a FunctionCallInfoData>
 }
@@ -468,11 +469,12 @@ pub struct FunctionCallInfo<'a> {
 /// a pointer-sized unsigned integer that acts like
 /// a pointer.
 pub struct Datum {
+    #[allow(dead_code)]
     val: usize
 }
 
 impl Datum {
-    pub fn new_str(value: &str) -> Datum {
+    pub fn new_str(_value: &str) -> Datum {
         // We need to allocate our string onto the heap
         // and with the custom `palloc` allocator. `palloc`
         // allocates memory into contexts such that they
