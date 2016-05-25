@@ -1,10 +1,11 @@
 [package]
-
-name = "postgres_extension_macros"
+name = "postgres_extension_plugin"
 version = "0.0.1"
 authors = ["Daniel Fagnan <dnfagnan@gmail.com>",
 	   "Jeff Davis <jeff@davisjeff.com>"]
 
+[dependencies]
+
 [lib]
-name = "postgres_extension_macros"
-crate-type = ["rlib"]
+crate-type = ["dylib"]
+

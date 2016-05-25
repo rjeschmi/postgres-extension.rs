@@ -2,11 +2,12 @@
 
 name = "postgres_extension"
 version = "0.0.1"
-authors = ["Daniel Fagnan <dnfagnan@gmail.com>"]
+authors = ["Daniel Fagnan <dnfagnan@gmail.com>",
+	   "Jeff Davis <jeff@davisjeff.com>"]
 
 [lib]
 name = "postgres_extension"
-crate-type = ["dylib"]
+crate-type = ["rlib"]
 
 [dependencies]
 libc = "*"
